@@ -1,10 +1,11 @@
 <?php
     session_start();
 
-    if (isset($_SESSION['tareas']))
+    if (!isset($_SESSION['tareas']))
     {
         $_SESSION ['tareas'] = [] ;
     }
+    $tareas = $_SESSION['tareas']
     ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,9 +27,9 @@
             </thead>
             <tbody>
             <?php
-            for ($i-0; $i<count($tareas);$i++)
+            for ($i-0; $i < count($tareas);$i++)
             {
-                echo '<tr><td>' . $tareas[$i],'</td></tr>';
+                echo '<tr><td>' . $tareas[$i].'</td></tr>';
             }
             ?>
         </table>
